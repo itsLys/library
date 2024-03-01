@@ -1,25 +1,29 @@
 const myLibrary = [];
 
-function Book(name, author, pages) {
+function Book(name, author) {
   this.name = name;
   this.author = author;
-  this.pages = pages;
 }
 
-function addBook(name, author, pages) {
-  let book = new Book(name, author, pages);
+function addBook(name, author) {
+  let book = new Book(name, author);
   myLibrary.push(book);
 }
 
 const shelf = document.querySelector(".shelf");
 const bookCard = document.createElement("div");
+const bookTitle = document.createElement("h2");
+const authorName = document.createElement("p");
+bookCard.appendChild(bookTitle);
+bookCard.appendChild(authorName);
 bookCard.classList.add("book");
 
 function displayBooks() {
   myLibrary.forEach((book) => {
+    bookTitle.textContent = book.name;
+    authorName.textContent = book.author;
     let bookClone = bookCard.cloneNode(true);
-    bookClone.textContent = `name: ${book.name}, author ${book.author}, pages: ${book.pages}`;
-    console.log(book);
+    // bookClone.textContent = `name: ${book.name}, author ${book.author}, pages: ${book.pages}`;
     shelf.appendChild(bookClone);
   });
 }
@@ -39,7 +43,7 @@ document.addEventListener("click", (e) => {
 
 const newBookName = addBookModal.querySelector("#book-name");
 const newBookAuthor = addBookModal.querySelector("#author-name");
-const newBookPages = addBookModal.querySelector("#page-num");
+
 const bookForm = addBookModal.querySelector(".book-form");
 const submitBook = addBookModal.querySelector(".submit");
 
@@ -47,13 +51,12 @@ submitBook.addEventListener("click", (e) => {
   e.preventDefault();
   let bookName = newBookName.value;
   let bookAuthor = newBookAuthor.value;
-  let bookPages = newBookPages.value;
-  addBook(bookName, bookAuthor, bookPages);
+
+  addBook(bookName, bookAuthor);
   removeAll();
   displayBooks();
   bookForm.reset();
   addBookModal.classList.remove("open");
-  console.log(myLibrary);
 });
 function removeAll() {
   while (shelf.firstChild) {
