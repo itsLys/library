@@ -16,10 +16,14 @@ body {
   background-color: hsl(0, 0%, 89%);
 }
 .form-con {
+  display: none;
   background-color: rgba(70, 70, 70, 0.486);
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
+}
+.open {
+  display: block;
 }

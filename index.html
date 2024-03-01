@@ -8,13 +8,10 @@
     <script src="main.js" defer></script>
   </head>
   <body>
-    <button type="button">New Book</button>
-    <div class="shelf">
-      <div></div>
-    </div>
-
+    <button class="new-book-btn" type="button">New Book</button>
+    <div class="shelf"></div>
     <div class="form-con">
-      <form action="#" method="post" class="book-form">
+      <form class="book-form">
         <label for="book-name">Book Name</label>
         <input type="text" name="book-name" id="book-name" />
         <label for="author-name">Author</label>
@@ -28,6 +25,7 @@
           <input type="radio" name="status" id="not-read" />
           <label for="not-read">Not Read</label>
         </fieldset>
+        <button class="submit" type="button">Submit</button>
         <button class="close-btn" type="button">close</button>
       </form>
     </div>
