@@ -4,11 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
+    <link rel="stylesheet" href="css.css" />
     <script src="main.js" defer></script>
   </head>
   <body>
+    <button type="button">New Book</button>
     <div class="shelf">
       <div></div>
     </div>
+
+    <div class="form-con">
+      <form action="#" method="post" class="book-form">
+        <label for="book-name">Book Name</label>
+        <input type="text" name="book-name" id="book-name" />
+        <label for="author-name">Author</label>
+        <input type="text" name="author-name" id="author-name" />
+        <label for="page-num">Page Numer</label>
+        <input type="number" name="page-num" id="page-num" />
+        <fieldset>
+          <legend>status</legend>
+          <input type="radio" name="status" id="read" />
+          <label for="read">Read</label>
+          <input type="radio" name="status" id="not-read" />
+          <label for="not-read">Not Read</label>
+        </fieldset>
+        <button class="close-btn" type="button">close</button>
+      </form>
+    </div>
   </body>
 </html>
+
+<!-- New Book Button -->
+<!-- Form with Name, Author, Page Numbers, Status -->

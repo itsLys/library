@@ -1,0 +1,25 @@
+body {
+  min-height: 100vh;
+}
+.book {
+  border: 1px solid black;
+  margin: 0.5rem;
+  display: inline-block;
+}
+.book-form {
+  padding: 2rem;
+  position: absolute;
+  top: 5rem;
+  bottom: 5rem;
+  right: 5rem;
+  left: 5rem;
+  background-color: hsl(0, 0%, 89%);
+}
+.form-con {
+  background-color: rgba(70, 70, 70, 0.486);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}

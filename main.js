@@ -18,6 +18,7 @@ addBook("Book n3", 8);
 
 const shelf = document.querySelector(".shelf");
 const bookCard = document.createElement("div");
+bookCard.classList.add("book");
 
 myLibrary.forEach((book) => {
   let bookClone = bookCard.cloneNode(true);
@@ -26,7 +27,3 @@ myLibrary.forEach((book) => {
 
   shelf.appendChild(bookClone);
 });
-
-// Add the book to the shelf
-// Create a div inside shelf and content of it is the book name and pages
-// Loop over the myLib, for each index, create a div and change its text
