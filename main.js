@@ -26,6 +26,8 @@ removeBookBtn.classList.add("remove");
 removeBookBtn.textContent = "remove book";
 removeBookBtn.setAttribute("onclick", "removeBook(event)");
 
+bookStatus.setAttribute("onclick", "toggleBookStatus(event)");
+
 bookCard.appendChild(removeBookBtn);
 
 bookCard.classList.add("book");
@@ -40,10 +42,22 @@ function displayBooks() {
     shelf.appendChild(bookClone);
   });
 }
+
+// Add a button on each book that displays read and unread
+// When clicked, if the button is unread, button becomes read
+// When clicked, if button is read, button becomes unread
+
+function toggleBookStatus(e) {
+  if (e.target.textContent == "Read") {
+    e.target.textContent = "Not Read";
+  } else if (e.target.textContent == "Not Read") {
+    e.target.textContent = "Read";
+  }
+}
+
 function removeBook(e) {
   myLibrary.splice(e.target.parentElement.dataset.number, 1);
   removeAll();
-  console.log(myLibrary);
 }
 const newBook = document.querySelector(".new-book-btn");
 
