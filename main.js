@@ -54,6 +54,7 @@ function toggleBookStatus(e) {
     e.target.textContent = "Read";
   }
 }
+// Hello  
 
 function removeBook(e) {
   myLibrary.splice(e.target.parentElement.dataset.number, 1);
